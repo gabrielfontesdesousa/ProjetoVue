@@ -1,16 +1,22 @@
 <template>
-<NavPage></NavPage>
+<Header></Header>
+<Carrossel></Carrossel>
+<Catalogue></Catalogue>
 <router-link></router-link>
 </template>
 
 <script>
 
-import NavPage from './components/NavPage.vue';
+import Header from './components/Header.vue';
+import Carrossel from './components/Carrossel.vue';
+import Catalogue from './components/Catalogue.vue';
 
 export default {
   name: 'App',
   components: {
-    NavPage,
+    Header,
+    Carrossel,
+    Catalogue,
   }
 }
 </script>

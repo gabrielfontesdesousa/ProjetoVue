@@ -1,0 +1,298 @@
+<template>
+    <head>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    </head>
+    <img style="margin: -22px 0px 0px 20px; width: 6%; position: absolute;" src="../assets/logo.png" alt="Vertus Store">
+    <header class="header">
+            <nav>
+                <ul style="margin-top: 40px; margin-left: 20rem; display: flex; gap: 20px; align-items: center;">
+                    <li><a class="btn-login" href="">Login</a></li>
+                    <li><a @click="goTo('Catalogue')" class="btn-sobre" href="">Sobre nós</a></li>
+                    <li><a class="btn-contato" href="">Contato</a></li>
+                    <ul style="display: flex; align-items: center;width: 65%; height: 50px; flex-direction: row-reverse;">
+                    <li>
+                        <a class="btn-carrinho" href="carrinho"><img src="../assets/cart.png" alt=""></a>
+                    </li>
+                    <li style="align-items: center; height: 50px;">
+                        <div class="input-wrapper">
+                        <button class="icon">
+                            <img style="width: 5rem;" src="../assets/lupa.png" alt="">
+                        </button>
+                        <input type="text" name="text" class="input" placeholder="Procurar..." />
+                    </div>
+                    </li>
+                    
+                </ul>
+                </ul>
+               
+            </nav>
+
+    </header>
+
+</template>
+
+<script>
+
+export default {
+    name: 'header',
+    methods: {
+    goTo(caminho) {
+      this.$router.push(`/${caminho}`);
+    }
+  }
+};
+
+
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.Body, *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #131313;
+
+}
+header{
+    width: 100%;
+    height: 10vh;
+}
+
+.Logo{
+    width: 7.5%;
+    display: flex;
+    flex-flow: wrap;
+    margin-top: 0px;
+    margin-left: 20px;
+    
+}
+
+ul li a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 17px;
+}
+ul li{
+    list-style: none;   
+}
+
+.search{
+    border: 0;
+    font-family: 'Poppins';
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+ul li a img{
+    width: 25%;
+}
+
+
+/*sobre botao*/
+
+.btn-sobre{
+    appearance: none;
+    background-color: transparent;
+    border: 0.05rem solid #ffffff;
+    border-radius: 1.8rem;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+.btn-sobre:disabled {
+ pointer-events: none;
+}
+
+.btn-sobre:hover {
+ color: #000000;
+ background-color: #ffffff;
+ box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+.btn-sobre:active {
+ box-shadow: none;
+ transform: translateY(0);
+}
+
+
+/*login botao*/
+.btn-login{
+    appearance: none;
+    background-color: transparent;
+    border: 0.05rem solid #ffffff;
+    border-radius: 1.8rem;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+.btn-login:disabled {
+ pointer-events: none;
+}
+
+.btn-login:hover {
+ color: #000000;
+ background-color: #ffffff;
+ box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+.btn-login:active {
+ box-shadow: none;
+ transform: translateY(0);
+}
+
+
+
+/*botao contato*/
+.btn-contato{
+    appearance: none;
+    background-color: transparent;
+    border: 0.05rem solid #ffffff;
+    border-radius: 1.8rem;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+.btn-contato:disabled {
+ pointer-events: none;
+}
+
+.btn-contato:hover {
+ color: #000000;
+ background-color: #ffffff;
+ box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+.btn-contato:active {
+ box-shadow: none;
+ transform: translateY(0);
+}
+
+
+/*BARRA DE PROCURA*/
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.input {
+  border-style: none;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  outline: none;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  background-color: #000000;
+  box-shadow: 0px 0px 3px #000000;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input::placeholder,
+.input {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 17px;
+}
+
+.input::placeholder {
+  color: #8f8f8f;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  pointer-events: painted;
+  background-color: transparent;
+  transition: 0.2s linear;
+  border-color: #ffffff;
+  border: #ffffff ;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+  box-shadow: none;
+  width: 250px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 3px transparent;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+</style>
