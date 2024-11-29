@@ -164,45 +164,64 @@
     
 #catalog-section {
   padding: 20px 0;
+  background-color: #ffffff;
+
 }
 
 .dsc-catalog-cards {
-  margin-left: 15vh;
+  margin-left: 6vh;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(416px, 1fr));
+  background-color: #ffffff;
+  margin-bottom: 0px;
+  
 }
 
 .dsc-catalog-card-top {
   display: flex;
   justify-content: center;
   padding: 10px;
+  background-color: #ffffff;
+
+
 }
 
 .dsc-catalog-card-top img {
   width: 45vh;
   height: 40vh;
+  background-color: #ffffff;
+
 }
 
 .dsc-catalog-card-bottom {
   padding: 10px 20px;
   min-height: 110px;
+  background-color: #ffffff;
+
 }
 
 .dsc-catalog-card-bottom h3 {
   color: var(--dsc-color-font-secondary);
   font-size: 24px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: 'Poppins';
-  font-weight: 70;
+  font-weight: 700;
+  background-color: #ffffff;
+  margin-left: 84px;
+
 }
 
 .dsc-catalog-card-bottom h4 {
   color: var(--dsc-color-font-primary);
   font-size: 16px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: 'Poppins';
-  font-weight: 700;
+  font-weight: 400;
+  background-color: #ffffff;
+  margin-left: 84px;
+
+
 }
 
 
@@ -214,17 +233,19 @@
   padding: 12.5px 30px;
   border: 0;
   border-radius: 100px;
-  background-color: #ffffff;
+  background-color: #000000;
   color: #ffffff;
   font-weight: Bold;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   text-decoration: none;
+  margin-left: 74px;
+
 }
 
 .btnBuy:hover {
-  background-color: #ffffff;
-  box-shadow: 0 0 20px #ffffff;
+  background-color: #000000;
+  box-shadow: 0 0 20px #000000;
   transform: scale(1.1);
   color: #ffffff;
   text-decoration: none;
@@ -232,17 +253,17 @@
 
 }
 .btnBuy a{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-family: 'Poppins';
 
 }
 .btnBuy a:hover{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 .btnBuy:active {
-  background-color: #ffffff;
+  background-color: #000000;
   transition: all 0.25s;
   -webkit-transition: all 0.25s;
   box-shadow: none;

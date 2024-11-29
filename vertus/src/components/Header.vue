@@ -1,3 +1,4 @@
+
 <template>
     <head>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -6,8 +7,14 @@
     <header class="header">
             <nav>
                 <ul style="margin-top: 40px; margin-left: 20rem; display: flex; gap: 20px; align-items: center;">
+                    <li><a class="btn-login" href="">Home</a></li>
                     <li><a class="btn-login" href="">Login</a></li>
-                    <li><a @click="goTo('Catalogue')" class="btn-sobre" href="">Sobre nós</a></li>
+
+                    <li>
+                      <router-link to="/AboutUsPage" class="btn-sobre">
+                         Sobre nós
+                      </router-link>
+                    </li>
                     <li><a class="btn-contato" href="">Contato</a></li>
                     <ul style="display: flex; align-items: center;width: 65%; height: 50px; flex-direction: row-reverse;">
                     <li>
@@ -24,7 +31,6 @@
                     
                 </ul>
                 </ul>
-               
             </nav>
 
     </header>
@@ -32,17 +38,9 @@
 </template>
 
 <script>
-
-export default {
-    name: 'header',
-    methods: {
-    goTo(caminho) {
-      this.$router.push(`/${caminho}`);
-    }
+  export default {
+      name: 'Header'
   }
-};
-
-
 </script>
 
 <style>
@@ -59,7 +57,7 @@ export default {
 }
 header{
     width: 100%;
-    height: 10vh;
+    height: 13vh;
 }
 
 .Logo{
@@ -100,6 +98,7 @@ ul li a img{
 /*sobre botao*/
 
 .btn-sobre{
+    width: 21vh;
     appearance: none;
     background-color: transparent;
     border: 0.05rem solid #ffffff;
