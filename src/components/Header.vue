@@ -3,27 +3,39 @@
     <head>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     </head>
-    <img style="margin: -22px 0px 0px 20px; width: 6%; position: absolute;" src="../assets/logo.png" alt="Vertus Store">
+    <img style="margin: 17px 0px 0px 20px; width: 6%; position: absolute; background-color: black;" src="../assets/logo.png" alt="Vertus Store">
     <header class="header">
             <nav>
                 <ul style="margin-top: 40px; margin-left: 20rem; display: flex; gap: 20px; align-items: center;">
-                    <li><a class="btn-login" href="">Home</a></li>
-                    <li><a class="btn-login" href="">Login</a></li>
-
                     <li>
-                      <router-link to="/AboutUsPage" class="btn-sobre">
-                         Sobre nós
+                      <router-link to="/HomePage">
+                        <a class="btn-login" href="">Home</a>
                       </router-link>
                     </li>
-                    <li><a class="btn-contato" href="">Contato</a></li>
+                    <li>
+                        <router-link to="/LoginPage">
+                          <a class="btn-login" href="">Login</a>
+                        </router-link>
+                    </li>
+                    <li>
+                      <router-link to="/AboutUsPage">
+                        <a class="btn-sobre">Sobre nós</a>
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link to="/ContactPage" class="">
+                        <a class="btn-contato" href="">Contato</a>
+                    </router-link>
+
+                    </li>
                     <ul style="display: flex; align-items: center;width: 65%; height: 50px; flex-direction: row-reverse;">
                     <li>
-                        <a class="btn-carrinho" href="carrinho"><img src="../assets/cart.png" alt=""></a>
+                        <a class="btn-carrinho" href="carrinho"><img style="background-color: black;" src="../assets/cart.png" alt=""></a>
                     </li>
                     <li style="align-items: center; height: 50px;">
                         <div class="input-wrapper">
                         <button class="icon">
-                            <img style="width: 5rem;" src="../assets/lupa.png" alt="">
+                            <img style="width: 5rem; background-color: black;" src="../assets/lupa.png" alt="">
                         </button>
                         <input type="text" name="text" class="input" placeholder="Procurar..." />
                     </div>
@@ -52,12 +64,14 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    background-color: #131313;
+    background-color: black;
 
 }
+
 header{
     width: 100%;
-    height: 13vh;
+    height: 16vh;
+    background-color: black;
 }
 
 .Logo{
@@ -77,7 +91,13 @@ ul li a{
     font-family: 'Poppins';
     font-weight: 300;
     font-size: 17px;
+    
 }
+ul li a img{
+  background-color: #000000;
+
+}
+
 ul li{
     list-style: none;   
 }
@@ -88,6 +108,7 @@ ul li{
     color: white;
     text-decoration: none;
     font-size: 17px;
+    background-color: black ;
 
 }
 ul li a img{
@@ -243,15 +264,16 @@ ul li a img{
 .input {
   border-style: none;
   height: 50px;
-  width: 50px;
+  width: 230px;
   padding: 10px;
   outline: none;
-  border-radius: 50%;
+  border-radius: 50px;
   transition: 0.5s ease-in-out;
-  background-color: #000000;
+  background-color: transparent;
   box-shadow: 0px 0px 3px #000000;
   padding-right: 40px;
   color: #fff;
+  background-color: white;
 }
 
 .input::placeholder,
@@ -270,9 +292,9 @@ ul li a img{
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 0px;
+  right: -25px;
   cursor: pointer;
-  width: 50px;
+  width: 80px;
   height: 50px;
   outline: none;
   border-style: none;
@@ -288,10 +310,11 @@ ul li a img{
 .input:focus {
   box-shadow: none;
   width: 250px;
-  border-radius: 0px;
-  background-color: transparent;
+  border-radius: 20px;
   border-bottom: 3px transparent;
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+  color: #000000;
+
 }
 
 </style>

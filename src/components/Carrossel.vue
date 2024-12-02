@@ -1,7 +1,7 @@
 
+
 <template>
   <head>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
     <main >
@@ -16,6 +16,15 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="../assets/imgcarousel3.png" alt="Third slide">
           </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../assets/imgcarousel4.png" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../assets/imgcarousel5.png" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../assets/imgcarousel6.png" alt="Third slide">
+          </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -28,3 +37,15 @@
       </div>
     </main>
 </template>
+<script>
+
+</script>
+<style>
+main div{
+ top: -10vh;
+  
+}
+#app{
+  margin-top: 10px;
+}
+</style>
