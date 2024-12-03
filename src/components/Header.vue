@@ -3,10 +3,11 @@
     <head>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     </head>
-    <img style="margin: 17px 0px 0px 20px; width: 6%; position: absolute; background-color: black;" src="../assets/logo.png" alt="Vertus Store">
+    <img style="margin: -20px 0px 0px 20px; width: 6%; position: absolute; background-color: black;" src="../assets/logo.png" alt="Vertus Store">
     <header class="header">
             <nav>
-                <ul style="margin-top: 40px; margin-left: 20rem; display: flex; gap: 20px; align-items: center;">
+                <ul style="margin-top: 40px; margin-left: 20rem; display: flex; gap: 20px; align-items: center;   background-color: #000000;
+">
                     <li>
                       <router-link to="/HomePage">
                         <a class="btn-login" href="">Home</a>
@@ -59,19 +60,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-.Body, *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    background-color: black;
-
-}
-
 header{
     width: 100%;
-    height: 16vh;
-    background-color: black;
+    height: 13vh;
+    background-color: rgb(0, 0, 0);
+}
+nav, ul{
+  height: auto;
+  background-color: #000000;
 }
 
 .Logo{
@@ -122,7 +118,7 @@ ul li a img{
     width: 21vh;
     appearance: none;
     background-color: transparent;
-    border: 0.05rem solid #ffffff;
+    border: 0.15rem solid #ffffff;
     border-radius: 1.8rem;
     box-sizing: border-box;
     color: #ffffff;
@@ -166,7 +162,7 @@ ul li a img{
 .btn-login{
     appearance: none;
     background-color: transparent;
-    border: 0.05rem solid #ffffff;
+    border: 0.15rem solid #ffffff;
     border-radius: 1.8rem;
     box-sizing: border-box;
     color: #ffffff;
@@ -211,7 +207,7 @@ ul li a img{
 .btn-contato{
     appearance: none;
     background-color: transparent;
-    border: 0.05rem solid #ffffff;
+    border: 0.15rem solid #ffffff;
     border-radius: 1.8rem;
     box-sizing: border-box;
     color: #ffffff;

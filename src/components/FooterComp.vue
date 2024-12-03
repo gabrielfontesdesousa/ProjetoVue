@@ -10,7 +10,7 @@
   background-color: #000000;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   margin-top: auto;
   height: 30vh;
   align-items: center;

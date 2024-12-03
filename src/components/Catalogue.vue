@@ -486,9 +486,7 @@
     </template>
 
 <script>
-export default {
-  name: "App",
-};
+
 </script>
 
 <style>
@@ -499,30 +497,12 @@ html, body {
 img{
   background-color: #ffffff;
 }
-#app {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-  position: relative;
-  top: -91px;
-  width: 100%;
-  height: 130vh;
-}
-
-.Catalogue {
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-}
 
 #catalog-section {
-  padding: 20px 0;
   background-color: #ffffff;
-  top: -15vh;
   position: relative;
+  padding-bottom: 10vh;
+  padding-top: 5vh;
 }
 .dsc-catalog-card-top dsc-line-bottom{
   background-color: #ffffff;
@@ -594,6 +574,4 @@ main {
   box-shadow: 0 0 20px #000000;
   transform: scale(1.1);
 }
-
-
 </style>

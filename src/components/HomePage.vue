@@ -6,13 +6,12 @@
     <script>
     
     import Carrossel from './Carrossel.vue';
-    import Catalogue from './Catalogue.vue';
-    
+    import Catalogue from './Catalogue.vue'
     export default {
       name: 'HomePage',
       components: {
         Carrossel,
-        Catalogue,
+        Catalogue
       }
     }
     </script>
