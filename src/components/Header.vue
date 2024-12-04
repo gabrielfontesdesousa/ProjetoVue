@@ -1,12 +1,13 @@
 
 <template>
+  
     <head>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     </head>
-    <img style="margin: -20px 0px 0px 20px; width: 6%; position: absolute; background-color: black;" src="../assets/logo.png" alt="Vertus Store">
+    <img style="margin: 20px 0px 0px 20px; width: 6%; position: absolute; background-color: black;" src="../assets/logo.png" alt="Vertus Store">
     <header class="header">
             <nav>
-                <ul style="margin-top: 40px; margin-left: 20rem; display: flex; gap: 20px; align-items: center;   background-color: #000000;
+                <ul style="margin-left: 20rem; display: flex; gap: 20px; align-items: center;   background-color: #000000;
 ">
                     <li>
                       <router-link to="/HomePage">
@@ -31,7 +32,9 @@
                     </li>
                     <ul style="display: flex; align-items: center;width: 65%; height: 50px; flex-direction: row-reverse;">
                     <li>
-                        <a class="btn-carrinho" href="carrinho"><img style="background-color: black;" src="../assets/cart.png" alt=""></a>
+                      <router-link to="/CartPage">
+                          <a class="btn-carrinho" href="carrinho"><img style="background-color: black;" src="../assets/cart.png" alt=""></a>
+                      </router-link>
                     </li>
                     <li style="align-items: center; height: 50px;">
                         <div class="input-wrapper">
@@ -62,19 +65,20 @@
 
 header{
     width: 100%;
-    height: 13vh;
+    height: 19vh;
     background-color: rgb(0, 0, 0);
 }
 nav, ul{
   height: auto;
   background-color: #000000;
+  padding-top: 2vh;
 }
 
 .Logo{
     width: 7.5%;
     display: flex;
     flex-flow: wrap;
-    margin-top: 0px;
+    margin-top: 30px;
     margin-left: 20px;
     
 }

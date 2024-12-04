@@ -1,6 +1,6 @@
 <template>
     <Carrossel></Carrossel>
-    <Catalogue></Catalogue>
+    <Catalogue></Catalogue>    
     </template>
     
     <script>
@@ -17,6 +17,6 @@
     </script>
     
     <style>
-    
+   
     </style>
     

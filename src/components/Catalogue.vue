@@ -573,5 +573,6 @@ img{
 .btnBuy:hover {
   box-shadow: 0 0 20px #000000;
   transform: scale(1.1);
+  transition: 0.1s;
 }
 </style>
