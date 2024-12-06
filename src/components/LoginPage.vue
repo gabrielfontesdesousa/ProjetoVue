@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;  
-    background-color: #181818;
+    background-color: #ffffff;
     height: 50vh;
     }
 * {  
