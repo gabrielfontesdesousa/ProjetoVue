@@ -5,6 +5,8 @@ import ContactPage from "./components/ContactPage.vue";
 import LoginPage from "./components/LoginPage.vue";
 import CartPage from "./components/CartPage.vue";
 import ManagementPage from "./components/ManagementPage.vue"
+import CreateAccount from "./components/CreateAccount.vue"
+
 const routes = [{
     path: '/AboutUsPage',
     name: 'AboutUsPage',
@@ -14,6 +16,11 @@ const routes = [{
     path: '/ManagementPage',
     name: 'ManagementPage',
     component: ManagementPage
+},
+{
+    path: '/CreateAccount',
+    name: 'CreateAccount',
+    component: CreateAccount
 },
 {
     path: '/LoginPage',

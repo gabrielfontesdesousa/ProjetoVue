@@ -1,15 +1,15 @@
 <template>
         <main class="main">
             <div class="form-container">
-                <form class="form">
+                <form  @submit.prevent="enviarMensagem" class="form">
                  <div class="form-group">
                     <label for="email" >Entre em contato</label>
                     
-                    <input type="text" id="email" name="email" required="" placeholder="Email">
+                    <input v-model="email" type="text" id="email" name="email" required="" placeholder="Email">
                 </div>
             <div class="form-group">
           <label for="textarea">Como podemos ajudar?</label>
-          <textarea name="textarea" id="textarea" rows="10" cols="50" required=""></textarea>
+          <textarea v-model="mensagem" name="textarea" id="textarea" rows="10" cols="50" required=""></textarea>
         </div>
         <button class="form-submit-btn" type="submit">Enviar</button>
       </form>
@@ -17,8 +17,44 @@
     </main>
 </template>
 <script>
+export default {
+  data() {
+    return {
+      email: '',
+      mensagem: ''
+    };
+  },
+  methods: {
+    async enviarMensagem() {
+      try {
+        await fetch('http://localhost:3000/api/contatos', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: this.email,
+            mensagem: this.mensagem
+          })
+        });
+        alert('Mensagem enviada!');
+      } catch (error) {
+        console.error(error);
+        alert('Erro ao enviar mensagem.');
+      }
+    }
+  }
+};
 </script>
 <style>
+.main{
+  background-color: #121212;
+  height: 81vh;
+  display: flex;
+align-items: center;
+justify-content: center;
+
+}
 .form-container {
   width: 65vh;
   background: linear-gradient(#1c1c1c, #000000) padding-box,

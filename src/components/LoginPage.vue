@@ -13,42 +13,74 @@
         <br />
       </ul>
 
-      <!-- Adicionei @submit.prevent para chamar o método login ao enviar o formulário -->
-      <form style="display: flex;" class="Container-Form" @submit.prevent="login">
+      <form @submit.prevent="loginUser" style="display: flex;" class="Container-Form">
         <h3></h3>
-        <input v-model="email" class="inputLogin" placeholder="Usuário" type="text" />
+        <input required v-model="email" class="inputLogin" placeholder="Usuário" type="text" />
         <br /><br />
         <h3></h3>
-        <input v-model="password" class="inputLogin" placeholder="Senha" type="password" />
+        <input required v-model="password" class="inputLogin" placeholder="Senha" type="password" />
         <div class="ForgotContainer">
           <a href=""><span>Esqueceu sua senha?</span></a>
         </div>
-      </form>
 
-      <div class="ButtonLogin">
-        <!-- Botão de login já dispara o envio do formulário por estar dentro do form -->
-        <button type="submit" class="btnLogin">Entrar</button>
-        <button class="btnLogin2">Criar Conta</button>
-        <p>{{ message }}</p>
-      </div>
+        <div class="ButtonLogin">
+          <button type="submit" class="btnLogin">Entrar</button>
+          <router-link to="/CreateAccount">
+            <button type="submit" class="btnLogin2">Criar Conta</button>
+          </router-link>
+          <p v-if="error">{{ error }}</p>
+        </div>
+      </form>
     </div>
+     
   </main>
 </template>
 
 <script>
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../BackEnd/Firebase/';
+
 export default {
-  name: 'Login',
-  data: () => {
+  data() {
     return {
-      email: '',
-      password: ''
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async loginUser() {
+      try {
+        await signInWithEmailAndPassword(auth, this.email, this.password);
+        this.$router.push("/homePage"); 
+        alert("Logado")
+      } catch (error) {
+        alert("Erro ao fazer login: " + error.message);
+      }
+    },
+    async createUser() {
+     
+      if (this.password !== this.confirmPassword) {
+        alert("As senhas não coincidem!");
+        return;
+      }
+
+      try {
+        await createUserWithEmailAndPassword(auth, this.email, this.password);
+        this.$router.push("/loginPage"); 
+      } catch (error) {
+        alert("Erro ao criar conta: " + error.message);
+      }
+    },
+    goToLogin() {
+      this.$router.push("/login"); 
     }
   }
 };
+
+
 </script>
 
 <style scoped>
-/* Suas estilizações existentes já estão ótimas e foram mantidas */
 .ForgotContainer {
   display: flex;
   position: relative;
