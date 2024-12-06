@@ -21,8 +21,8 @@
 <style>
 .form-container {
   width: 65vh;
-  background: linear-gradient(#212121, #000000) padding-box,
-              linear-gradient(145deg, transparent 35%,#000000, #ffffff) border-box;
+  background: linear-gradient(#1c1c1c, #000000) padding-box,
+              linear-gradient(145deg, transparent 35%,#0e0e0e, #2f2f2f) border-box;
   border: 2px solid transparent;
   padding: 32px 24px;
   font-size: 18px;

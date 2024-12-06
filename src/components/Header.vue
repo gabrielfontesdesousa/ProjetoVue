@@ -15,9 +15,9 @@
                       </router-link>
                     </li>
                     <li>
-                        <router-link to="/LoginPage">
-                          <a class="btn-login" href="">Login</a>
-                        </router-link>
+                      <router-link to="/ManagementPage">
+                        <a class="btn-login" href="">Gerenciar</a>
+                      </router-link>
                     </li>
                     <li>
                       <router-link to="/AboutUsPage">
@@ -36,7 +36,10 @@
                           <a class="btn-carrinho" href="carrinho"><img style="background-color: black;" src="../assets/cart.png" alt=""></a>
                       </router-link>
                     </li>
-                    <li style="align-items: center; height: 50px;">
+                    <router-link to="/LoginPage">
+                          <a class="btn-login" href="">Login</a>
+                        </router-link>
+                    <li style="align-items: center; margin-right: 40px; height: 50px;">
                         <div class="input-wrapper">
                         <button class="icon">
                             <img style="width: 5rem; background-color: black;" src="../assets/lupa.png" alt="">
