@@ -1,64 +1,76 @@
 <template>
-        <main class="main">
-            <div class="form-container">
-                <form  @submit.prevent="enviarMensagem" class="form">
-                 <div class="form-group">
-                    <label for="email" >Entre em contato</label>
-                    
-                    <input v-model="email" type="text" id="email" name="email" required="" placeholder="Email">
-                </div>
-            <div class="form-group">
-          <label for="textarea">Como podemos ajudar?</label>
-          <textarea v-model="mensagem" name="textarea" id="textarea" rows="10" cols="50" required=""></textarea>
+  <main class="main">
+    <div class="form-container">
+      <form @submit.prevent="enviarMensagem" class="form">
+        <div class="form-group">
+          <label for="email">Entre em contato</label>
+          <input v-model="contact.email" type="email" id="email" name="email" required placeholder="Email">
         </div>
+
+        <div class="form-group">
+          <label for="textarea">Como podemos ajudar?</label>
+          <textarea v-model="contact.mensagem" name="textarea" id="textarea" rows="10" cols="50" required></textarea>
+        </div>
+
         <button class="form-submit-btn" type="submit">Enviar</button>
       </form>
+      <div v-if="successMessage" class="success-message">{{ successMessage }}</div>
+      <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
     </div>
-    </main>
+  </main>
 </template>
+
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      email: '',
-      mensagem: ''
+      contact: {
+        email: '',
+        mensagem: ''
+      },
+      successMessage: '',
+      errorMessage: ''
     };
   },
   methods: {
-    async enviarMensagem() {
-      try {
-        await fetch('http://localhost:3000/api/contatos', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: this.email,
-            mensagem: this.mensagem
-          })
-        });
-        alert('Mensagem enviada!');
-      } catch (error) {
-        console.error(error);
-        alert('Erro ao enviar mensagem.');
-      }
+  async enviarMensagem() {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(this.contact.email)) {
+      this.errorMessage = 'Por favor, insira um email válido.';
+      this.successMessage = '';
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:3000/api/contatos', this.contact);
+      this.successMessage = 'Mensagem enviada com sucesso!';
+      this.contact = { email: '', mensagem: '' }; 
+      this.errorMessage = '';
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
+      this.errorMessage = 'Erro ao enviar a mensagem. Tente novamente.';
+      this.successMessage = '';
     }
   }
+}
 };
 </script>
+
 <style>
-.main{
+.main {
   background-color: #121212;
   height: 81vh;
   display: flex;
-align-items: center;
-justify-content: center;
-
+  align-items: center;
+  justify-content: center;
 }
+
 .form-container {
   width: 65vh;
   background: linear-gradient(#1c1c1c, #000000) padding-box,
-              linear-gradient(145deg, transparent 35%,#0e0e0e, #2f2f2f) border-box;
+    linear-gradient(145deg, transparent 35%, #0e0e0e, #2f2f2f) border-box;
   border: 2px solid transparent;
   padding: 32px 24px;
   font-size: 18px;
@@ -149,18 +161,27 @@ justify-content: center;
   border-radius: 18px;
 }
 
-
-.form-submit-btn:Hover{
+.form-submit-btn:hover {
   background-color: #ffffff;
   border-color: #fff;
-  transition: all (0.5);
+  transition: all 0.5s;
   transform: all scale(1, 1);
   -webkit-transition: all 0.5s;
 }
-.form-group label{
-    padding-bottom: 10px;
+
+.form-group label {
+  padding-bottom: 10px;
 }
 
+.success-message {
+  color: #28a745;
+  font-size: 16px;
+  margin-top: 20px;
+}
 
-
+.error-message {
+  color: #dc3545;
+  font-size: 16px;
+  margin-top: 20px;
+}
 </style>

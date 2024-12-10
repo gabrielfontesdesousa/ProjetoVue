@@ -6,6 +6,7 @@ import LoginPage from "./components/LoginPage.vue";
 import CartPage from "./components/CartPage.vue";
 import ManagementPage from "./components/ManagementPage.vue"
 import CreateAccount from "./components/CreateAccount.vue"
+import ContactTest from "./components/ContactTest.vue";
 
 const routes = [{
     path: '/AboutUsPage',
@@ -26,6 +27,11 @@ const routes = [{
     path: '/LoginPage',
     name: 'LoginPage',
     component: LoginPage
+},
+{
+    path: '/ContactTest',
+    name: 'ContactTest',
+    component: ContactTest
 },
 {
     path: '/HomePage',
