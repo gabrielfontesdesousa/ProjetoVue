@@ -19,27 +19,21 @@ Certifique-se de ter o Node.js, npm e MySQL configurados na sua máquina.
 🖥️ Iniciando o Servidor Backend
 1️⃣ Navegue até o caminho do servidor:
 
-sh
-Copiar
-Editar
+
 cd src/backend/express
 2️⃣ Execute o servidor com o comando:
 
-sh
-Copiar
-Editar
+
 node server.js
 🌐 Configurando o Frontend
 1️⃣ No diretório vertus, rode os seguintes comandos:
 
-sh
-Copiar
-Editar
+
 npm install
 npm install vue-router
 npm run serve
 🗄️ Configuração do Banco de Dados
-1️⃣ Configure o banco de dados localmente utilizando o script disponível:
+ Configure o banco de dados localmente utilizando o script disponível:
 📂 BANCO_VERTUS.sql
 
 💡 Dica: Certifique-se de que seu MySQL está rodando e que as credenciais no arquivo de configuração do backend estão corretas.
